@@ -2,6 +2,6 @@
 
 ## Dependencies
 
-* YAML
-* Mojolicious
-* JSON::Validator::OpenAPI
+* App::SerializeUtils
+* Mojolicious::Lite
+* JSON::Validator

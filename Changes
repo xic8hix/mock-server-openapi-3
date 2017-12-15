@@ -1,6 +1,6 @@
-Revision history for Perl extension Test::Mock::OpenAPI.
+Revision history for Perl extension Test::Mock::API::OpenAPI.
 
 0.01  Sat Dec  9 23:34:01 2017
 	- original version; created by h2xs 1.23 with options
-		-b 5.10.1 -XAn Test::Mock::OpenAPI
+		-b 5.10.1 -XAn Test::Mock::API::OpenAPI
 

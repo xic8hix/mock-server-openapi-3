@@ -5,7 +5,7 @@ use warnings FATAL => 'all';
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
-    NAME              => 'Test::Mock::OpenAPI',
+    NAME              => 'Test::Mock::API::OpenAPI',
     VERSION_FROM      => 'lib/Test/Mock/OpenAPI.pm',
     PREREQ_PM         => {
         'Mojolicious'           => 7.58,

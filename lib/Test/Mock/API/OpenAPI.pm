@@ -1,21 +1,32 @@
-package Test::Mock::OpenAPI;
+package Test::Mock::API::OpenAPI;
 
-use Mojo::Base -base;
+use Mojo::Base 'Test::Mock::API';
 
 use 5.010001;
 use strict;
 use warnings;
 
-use Test::Mock::OpenAPI::Resource;
-use Test::Mock::OpenAPI::Resource::Method;
-use Test::Mock::OpenAPI::Resource::Parameter;
-use Test::Mock::OpenAPI::Resource::Response;
+use Test::Mock::API::OpenAPI::Resource;
+use Test::Mock::API::OpenAPI::Resource::Method;
+use Test::Mock::API::OpenAPI::Resource::Parameter;
+use Test::Mock::API::OpenAPI::Resource::Response;
 
 our $VERSION = '0.01';
+
+
+#@override
+has version => sub { return 'OpenAPI-3.0.1' };
 
 has 'resources';
 
 has add_resource => sub {
+        my $self = shift();
+        my $resource = shift();
+
+        push(@{$self->{resources}}, $resource);
+    };
+
+has run => sub {
 
     };
 
@@ -25,16 +36,16 @@ __END__
 
 =head1 NAME
 
-Test::Mock::OpenAPI - Perl extension for blah blah blah
+Test::Mock::API::OpenAPI - Perl extension for blah blah blah
 
 =head1 SYNOPSIS
 
-  use Test::Mock::OpenAPI;
+  use Test::Mock::API::OpenAPI;
   blah blah blah
 
 =head1 DESCRIPTION
 
-Stub documentation for Test::Mock::OpenAPI, created by h2xs. It looks like the
+Stub documentation for Test::Mock::API::OpenAPI, created by h2xs. It looks like the
 author of the extension was negligent enough to leave the stub
 unedited.
 

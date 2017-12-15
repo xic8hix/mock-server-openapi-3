@@ -1,4 +1,4 @@
-package Test::Mock::OpenAPI::Resource::Method;
+package Test::Mock::API::OpenAPI::Resource::Method;
 
 use Mojo::Base -base;
 

@@ -7,5 +7,6 @@
         <option name="revision" value="5" />
       </PerlVersion>
     </option>
+    <option name="PERL_CRITIC_ENABLED" value="true" />
   </component>
 </project>

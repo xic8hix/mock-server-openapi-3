@@ -1,6 +1,10 @@
 package Test::Mock::API::OpenAPI::Resource::Parameter::Format;
+
+use Mojo::Base -base;
+
 use strict;
 use warnings FATAL => 'all';
+
 
 has map => {
         'int32'     => \Test::Mock::API::OpenAPI::Resource::Parameter::Format::Int32,
@@ -15,7 +19,5 @@ has map => {
         'email'     => \Test::Mock::API::OpenAPI::Resource::Parameter::Format::Email,
         'uuid'      => \Test::Mock::API::OpenAPI::Resource::Parameter::Format::UUID,
     };
-
-has
 
 1;

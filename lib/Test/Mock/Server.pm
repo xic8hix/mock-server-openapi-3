@@ -1,10 +1,12 @@
 package Test::Mock::Server;
 
+use Mojo::Base 'Mojolicious';
+
 use strict;
 use warnings FATAL => 'all';
 
-use Mojolicious::Lite;
 use Test::Mock::API::Factory;
+use Mojolicious::Routes;
 use Getopt::Long;
 use Carp;
 
@@ -14,19 +16,24 @@ my $API;
 
 GetOptions('u|url=s' => \$url) or confess("Missing args");
 
-any '/:path' => sub {
-        my $c = shift;
+sub startup {
+    my $self = shift;
 
-        my $request = $c->req;
-        my $api = API();
-        my $response = $api->route($request);
+    my Mojolicious::Routes $routes = $self->routes;
+    $routes->any('/:path' => sub {
+            my Mojolicious::Controller $c = shift;
 
-        $c->render($response);
-    };
+            my $request = $c->req;
+            my $api = API();
+            my $response = $api->route($request);
 
+            $c->render($response);
+        });
+}
 
-app->start;
+$app->start;
 
+#@returns Test::Mock::API
 sub API {
     return $API if (defined($API));
 

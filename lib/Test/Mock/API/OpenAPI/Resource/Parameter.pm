@@ -5,15 +5,22 @@ use Mojo::Base -base;
 use strict;
 use warnings FATAL => 'all';
 
-has 'name';
-has 'required';
-has 'in';
-has 'type';
-has 'description';
-has 'deprecated';
-has 'allowEmptyValue';
+use Carp;
 
-has 'format';
-has 'min';
+
+has validate => sub { confess "not implemented"; };
+
+has name => sub { confess "not implemented"; };
+
+
+has required => sub { confess "not implemented"; };
+has in => sub { confess "not implemented"; };
+has type => sub { confess "not implemented"; };
+has description => sub { confess "not implemented"; };
+has deprecated => sub { confess "not implemented"; };
+has allowEmptyValue => sub { confess "not implemented"; };
+
+has format => sub { confess "not implemented"; };
+has min => sub { confess "not implemented"; };
 
 1;

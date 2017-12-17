@@ -1,12 +1,9 @@
-package Test::Mock::API::Loader;
+package Test::Mock::API::OpenAPI::Resource::Parameter::Factory;
 
 use Mojo::Base -base;
 
 use strict;
 use warnings FATAL => 'all';
-use URI;
-
-has url => undef;
 
 
 

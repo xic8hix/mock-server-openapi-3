@@ -15,6 +15,9 @@ This method will download all resources or read from disk and prepare to work.
 The method must return object implementation of this interface.
 
 =cut
+
+#@abstract
+#@method
 has render => sub { confess "not implemented"; };
 
 =head2 Method Validate
@@ -22,6 +25,9 @@ has render => sub { confess "not implemented"; };
 This method validation full schema.
 
 =cut
+
+#@abstract
+#@method
 has validate => sub { confess "not implemented"; };
 
 =head2 Method Version
@@ -29,6 +35,9 @@ has validate => sub { confess "not implemented"; };
 This method return version of schema API
 
 =cut
+
+#@abstract
+#@method
 has version => sub { confess "not implemented"; };
 
 =head2 Method URL
@@ -36,6 +45,9 @@ has version => sub { confess "not implemented"; };
 This method will return URL of a schema.
 
 =cut
+
+#@abstract
+#@method
 has url => sub { confess "not implemented"; };
 
 =head2 Method Routes
@@ -43,6 +55,9 @@ has url => sub { confess "not implemented"; };
 This method will return an array of routes after render.
 
 =cut
+
+#@abstract
+#@method
 has routes => sub { confess "not implemented"; };
 
 =head2 Method Route
@@ -57,6 +72,9 @@ Headers - hash - all header of HTTP request
 Params  - hash - GET and POST params of HTTP request
 
 =cut
+
+#@abstract
+#@method
 has route => sub { confess "not implemented"; };
 
 1;

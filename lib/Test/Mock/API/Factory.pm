@@ -8,6 +8,7 @@ use warnings FATAL => 'all';
 use Carp;
 use Test::Mock::API;
 use Test::Mock::API::Detector;
+use Test::Mock::API::Loader;
 
 use constant API_TYPES => {
         "OpenAPI" => \Test::Mock::API::OpenAPI
@@ -18,28 +19,46 @@ has url => undef;
 
 has type => undef;
 
-has detect_version => sub {
-        my $self = shift();
+has content => undef;
 
-
-    };
 
 has create => sub {
         my $self = shift();
 
-        croak "TYPE is undefined" unless ($self->type);
         croak "URL is undefined" unless ($self->url);
 
-        my $content = $self->load;
+        my $content = $self->load();
 
         my Test::Mock::API $API = API_TYPES->{$self->type()};
 
-        return $API->render($self->url);
+        return $API->render($content);
     };
 
+#@method
+has loader => sub {
+        my $self = shift();
+
+        return Test::Mock::API::Loader->new($self->url);
+    };
+
+#@method
+has detect => sub {
+        my $self = shift();
+
+    };
+
+#@method
+has preload => sub {
+        my $self = shift();
+    };
+
+#@method
 has load => sub {
         my $self = shift();
 
+        my $loader = $self->loader();
 
+        $self->main_content = '';
     };
+
 1;

@@ -4,22 +4,9 @@ use Mojo::Base -base;
 
 use strict;
 use warnings FATAL => 'all';
+use Carp;
 
 
-has 'method';
-has 'parameters';
-has 'responses';
-
-has add_response => sub {
-
-    };
-
-has add_parameter => sub {
-
-    };
-
-has validate => sub {
-
-    };
+has name => sub { confess "not implemented"; };
 
 1;

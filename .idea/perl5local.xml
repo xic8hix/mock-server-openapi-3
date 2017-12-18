@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Perl5LocalSettings">
-    <option name="perlInterpreter" value="Perl v5.24.0" />
-    <option name="PERL_TIDY_PATH" value="$USER_HOME$/perl5.24.0/bin/perltidy" />
-    <option name="PERL_CRITIC_PATH" value="$USER_HOME$/perl5.24.0/bin/perlcritic" />
+    <option name="perlInterpreter" value="Perl v5.22.4" />
+    <option name="PERL_TIDY_PATH" value="C:\Perl64\site\bin\perltidy.bat" />
+    <option name="PERL_CRITIC_PATH" value="C:\Perl64\bin\perlcritic.bat" />
   </component>
   <component name="Perl5XSubsState">
     <option name="myFilesMap">

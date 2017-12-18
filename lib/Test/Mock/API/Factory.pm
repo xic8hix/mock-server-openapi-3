@@ -11,7 +11,7 @@ use Test::Mock::API::Detector;
 use Test::Mock::API::Loader;
 
 use constant API_TYPES => {
-        "OpenAPI" => \Test::Mock::API::OpenAPI
+        "OpenAPI" => \'Test::Mock::API::OpenAPI'
     };
 
 
@@ -21,15 +21,16 @@ has type => undef;
 
 has content => undef;
 
-
+#@returns Test::Mock::API
 has create => sub {
         my $self = shift();
 
         croak "URL is undefined" unless ($self->url);
 
         my $content = $self->load();
+        my $type = $self->type();
 
-        my Test::Mock::API $API = API_TYPES->{$self->type()};
+        my Test::Mock::API $API = Test::Mock::API::Factory::API_TYPES->$type;
 
         return $API->render($content);
     };

@@ -1,11 +1,24 @@
+package Cat;
+use Mojo::Base -base;
+
 use strict;
 use warnings FATAL => 'all';
 
-use Mojolicious::Lite -signatures;
+has name => 'Nyan';
+has ['age', 'weight'] => 4;
 
-get '/:foo' => sub ($c) {
-  my $foo = $c->param('foo');
-  $c->render(text => "Hello from $foo.");
-};
+package Tiger;
+use Mojo::Base 'Cat';
 
-app->start;
+has friend  => sub { Cat->new };
+has stripes => 42;
+
+package main;
+use Mojo::Base -strict;
+
+my $mew = Cat->new(name => 'Longcat');
+say $mew->age;
+say $mew->age(3)->weight(5)->age;
+
+my $rawr = Tiger->new(stripes => 38, weight => 250);
+say $rawr->tap(sub { $_->friend->name('Tacgnol') })->weight;

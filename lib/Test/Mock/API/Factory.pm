@@ -11,35 +11,42 @@ use Test::Mock::API::Detector;
 use Test::Mock::API::Loader;
 
 use constant API_TYPES => {
-        "OpenAPI" => \'Test::Mock::API::OpenAPI'
+        "OpenAPI" => 'Test::Mock::API::OpenAPI'
     };
 
 
-has url => undef;
+has url => '';
 
 has type => undef;
 
 has content => undef;
 
 #@returns Test::Mock::API
-has create => sub {
+has create => sub {  
         my $self = shift();
 
+        warn sprintf("URL: %s", $self->url);
         croak "URL is undefined" unless ($self->url);
 
         my $content = $self->load();
-        my $type = $self->type();
+        warn sprintf("CONTENT: %s", $self->content);
+        croak "CONTENT is not set" unless ($content);
 
-        my Test::Mock::API $API = Test::Mock::API::Factory::API_TYPES->$type;
+        #my $type = $self->type();
+        #print sprintf("TYPE: %s", $self->type);
+        #croak "TYPE is not set" unless ($type);
+        #croak "TYPE is not supported" unless (exists(API_TYPES->{$type}));
 
-        return $API->render($content);
+        #my Test::Mock::API $API = API_TYPES->$type;
+
+        #return $API->render($content);
     };
 
 #@method
 has loader => sub {
         my $self = shift();
 
-        return Test::Mock::API::Loader->new($self->url);
+        return Test::Mock::API::Loader->new(url => $self->url);
     };
 
 #@method
@@ -57,9 +64,10 @@ has preload => sub {
 has load => sub {
         my $self = shift();
 
-        my $loader = $self->loader();
+        $self->content('');
+        #my $loader = $self->loader();
 
-        $self->main_content = '';
+        #$self->main_content = '';
     };
 
 1;

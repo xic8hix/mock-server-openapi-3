@@ -1,5 +1,30 @@
 # Test::Mock::Server
 
+## Using
+
+### CLI
+
+> perl -Ilib/ bin/mock-server -u https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v2.0/yaml/petstore-separate/spec/swagger.yaml
+
+#### Options
+
+> -f|--file <local_file> - Loading from local file
+
+> -u|--url <local_file> - Download file and loading
+
+#### Supported types
+
+* YAML
+* JSON
+
+#### Supported versions of specifications
+
+* OpenAPI 
+  * 3.0.0
+  * 3.0.1
+* Swagger
+  * 2.0
+
 ## Constitutions
 
 ### Binary

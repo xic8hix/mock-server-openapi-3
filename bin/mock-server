@@ -1,0 +1,46 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings FATAL => 'all';
+
+use Carp;
+use Getopt::Long;
+use Mojolicious::Lite;
+use URI::file;
+
+use Test::Mock::API;
+use Test::Mock::API::Factory;
+
+
+my $url;
+my $file;
+
+GetOptions(
+    'u|url=s' => \$url,
+    'f|file=s' => \$file
+);
+confess("URL and FILE is undefined") if (!$url && !$file);
+confess("URL and FILE are set") if ($url && $file);
+
+$url = URI::file->new($file)->abs(URI::file->cwd)
+    if (defined($file));
+
+my $factory = Test::Mock::API::Factory->new(url => $url);
+confess("Factory is undefined") unless (defined($factory));
+
+my $API = $factory->create();
+
+confess("API is undefined") unless (defined($API));
+confess("API is not object") unless (ref($API));
+
+#my $routes = $API->routes();
+#
+#for my $route (@{$routes}) {
+#    no strict 'refs';
+#    no warnings 'redefine';
+#    $route->{method}($route->{url})->to(controller => $route->{controller}, action => $route->{action});
+#}
+exit;
+app->start('daemon', '-l', 'http://localhost:8000');
+
+1;

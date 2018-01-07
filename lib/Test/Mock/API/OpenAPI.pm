@@ -6,6 +6,7 @@ use 5.010001;
 use strict;
 use warnings;
 
+use Test::Mock::API::Document;
 use Test::Mock::API::OpenAPI::Resource;
 use Test::Mock::API::OpenAPI::Resource::Method;
 use Test::Mock::API::OpenAPI::Resource::Parameter;
@@ -17,7 +18,10 @@ our $VERSION = '0.01';
 #@override
 has version => sub { return 'OpenAPI-3.0.1' };
 
-has 'resources';
+has resources => undef;
+
+#@returns Test::Mock::API::Document
+has document => undef;
 
 has add_resource => sub {
         my $self = shift();

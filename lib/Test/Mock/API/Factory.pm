@@ -6,68 +6,54 @@ use strict;
 use warnings FATAL => 'all';
 
 use Carp;
+use Scalar::Util qw/blessed/;
+
 use Test::Mock::API;
 use Test::Mock::API::Detector;
 use Test::Mock::API::Loader;
-
-use constant API_TYPES => {
-        "OpenAPI" => 'Test::Mock::API::OpenAPI'
-    };
+use Test::Mock::API::Document;
 
 
-has url => '';
+has url => undef;
 
-has type => undef;
+has loader_object => undef;
 
-has content => undef;
 
 #@returns Test::Mock::API
-has create => sub {  
-        my $self = shift();
+has create => sub {
+        my ($self) = @_;
 
-        warn sprintf("URL: %s", $self->url);
-        croak "URL is undefined" unless ($self->url);
+        croak("URL is undefined") unless ($self->url());
 
-        my $content = $self->load();
-        warn sprintf("CONTENT: %s", $self->content);
-        croak "CONTENT is not set" unless ($content);
+        my $document = $self->load();
 
-        #my $type = $self->type();
-        #print sprintf("TYPE: %s", $self->type);
-        #croak "TYPE is not set" unless ($type);
-        #croak "TYPE is not supported" unless (exists(API_TYPES->{$type}));
+        confess("Document is not object") unless(blessed($document) eq 'Test::Mock::API::Document');
 
-        #my Test::Mock::API $API = API_TYPES->$type;
-
-        #return $API->render($content);
+        return $document;
     };
 
 #@method
+#@returns Test::Mock::API::Loader
 has loader => sub {
-        my $self = shift();
+        my ($self) = @_;
 
-        return Test::Mock::API::Loader->new(url => $self->url);
+        return $self->loader_object() if (defined($self->loader_object()));
+
+        $self->loader_object(Test::Mock::API::Loader->new(url => $self->url()));
+
+        return $self->loader_object();
     };
 
 #@method
-has detect => sub {
-        my $self = shift();
-
-    };
-
-#@method
-has preload => sub {
-        my $self = shift();
-    };
-
-#@method
+#@returns Test::Mock::API::Document
 has load => sub {
-        my $self = shift();
+        my ($self) = @_;
 
-        $self->content('');
-        #my $loader = $self->loader();
+        my $document = $self->loader->load();
 
-        #$self->main_content = '';
+        confess('Can\'t get document!') unless(defined($document));
+
+        return $document;
     };
 
 1;

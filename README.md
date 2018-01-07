@@ -6,11 +6,15 @@
 
 > perl -Ilib/ bin/mock-server -u https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v2.0/yaml/petstore-separate/spec/swagger.yaml
 
+#### Version
+
+* alpha - development/testing
+
 #### Options
 
-> -f|--file <local_file> - Loading from local file
+> -f|--file <local_file> - Loading from a local file
 
-> -u|--url <local_file> - Download file and loading
+> -u|--url <uri> - Download a file and loading
 
 #### Supported types
 
@@ -68,8 +72,12 @@
 
 ## Dependencies
 
-* Mojolicious
-* App::SerializeUtils
-* JSON::Validator
-* URI::file
-* File::Fetch
+* [Mojolicious](https://metacpan.org/pod/Mojolicious)
+* [YAML::XS](https://metacpan.org/pod/distribution/YAML-LibYAML/lib/YAML/XS.pod)
+* [URI](https://metacpan.org/pod/URI)
+
+## License
+
+![License](https://licensebuttons.net/l/by/4.0/88x31.png "CC-BY v4.0")
+
+[CC-BY v4.0](https://creativecommons.org/licenses/by/4.0/)

@@ -16,23 +16,54 @@ our $VERSION = '0.01';
 
 
 #@override
-has version => sub { return 'OpenAPI-3.0.1' };
+has version => sub {
+        my ($self) = @_;
 
-has resources => undef;
+        return $self->document()->version();
+    };
+
+#@override
+has type => sub {
+        my ($self) = @_;
+
+        return $self->document()->type();
+    };
+
+
+has resources => sub { {} };
 
 #@returns Test::Mock::API::Document
 has document => undef;
 
-has add_resource => sub {
-        my $self = shift();
-        my $resource = shift();
+sub render {
+    my ($self) = @_;
 
-        push(@{$self->{resources}}, $resource);
-    };
+    my $document = $self->document()->content();
 
-has run => sub {
+    for my $path (keys %{$document->{paths}}) {
 
-    };
+        my $resource = Test::Mock::API::OpenAPI::Resource->new(path => $path);
+        $self->resources()->{path} = $resource;
+
+        for my $method_name (keys %{$document->{paths}->{$path}}) {
+
+            my $method = Test::Mock::API::OpenAPI::Resource::Method::Factory->new(method => uc($method_name))->instance();
+            $resource->add_method($method_name, $method);
+
+            # Find parameters
+            for my $parameter_object (keys @{$document->{paths}->{$path}->{$method_name}->{parameters}}) {
+                my $parameter = Test::Mock::API::OpenAPI::Resource::Parameter::Factory
+                    ->new($parameter_object)->instance($parameter_object);
+            }
+
+            # Find responses
+            for my $response_code (keys %{$document->{paths}->{$path}->{$method_name}->{responses}}) {
+
+
+            }
+        }
+    }
+};
 
 1;
 __END__

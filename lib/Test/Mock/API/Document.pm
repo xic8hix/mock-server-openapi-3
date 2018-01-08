@@ -27,12 +27,12 @@ has type => sub {
 
         my $type;
         for my $tag (keys %{+ Test::Mock::API::Document::Types::TAGS_WITH_NAMES}) {
-            $type = $tag if (exists($self->document()->{$tag}));
+            $type = $tag if (exists($self->content()->{$tag}));
         }
 
         if (defined($type)) {
             $self->type_document(Test::Mock::API::Document::Types::TAGS_WITH_NAMES->{$type});
-            $self->version_document($self->document()->{$type});
+            $self->version_document($self->content()->{$type});
         }
 
         return $self->type_document();
@@ -44,7 +44,7 @@ has type_document => undef;
 
 has is_child => undef;
 
-has document => undef;
+has content => undef;
 
 has documents => sub {{}};
 
@@ -63,10 +63,10 @@ sub add_document {
 sub external_documents {
     my ($self) = @_;
 
-    my $document = $self->document();
-    confess("Document isn't HASH") unless (ref($document));
+    my $content = $self->content();
+    confess("Document isn't HASH") unless (ref($content));
 
-    $self->find_external_documents($document, '_root_', 0);
+    $self->find_external_documents($content, '_root_', 0);
 
     return [ keys %{$self->links_of_external_documents()} ];
 };

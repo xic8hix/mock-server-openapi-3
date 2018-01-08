@@ -8,7 +8,9 @@ use warnings FATAL => 'all';
 use Carp;
 use File::Fetch;
 use YAML::XS;
+
 use Test::Mock::API::Document;
+use Test::Mock::API::Document::Types;
 
 $File::Fetch::BLACKLIST = [ 'lwp' ];
 
@@ -50,18 +52,23 @@ sub load {
     if ($self->is_child()) {
         $document = Test::Mock::API::Document->new(
             url => $self->url(),
-            document => $object,
+            content => $object,
             is_child => $self->is_child(),
             type_document => $self->type_parent_document(),
             version_document => $self->version_parent_document()
         );
     }
     else {
-        $document = Test::Mock::API::Document->new(document => $object);
+        $document = Test::Mock::API::Document->new(content => $object);
     }
 
     croak("Unknown a document type") unless (defined($document->type()));
-    croak("Unsupported a document version") unless ($self->check_version($document->type(), $document->version()));
+    croak(
+        sprintf("Unsupported a document version - %s(%s)",
+            $document->type() // 'undefined',
+            $document->version() // 'undefined'
+        )
+    ) unless ($self->check_version($document->type(), $document->version()));
 
     for my $link (@{$document->external_documents()}) {
         $link = URI->new($link)->abs($self->url())
@@ -106,11 +113,18 @@ sub loader {
 };
 
 sub check_version {
-    my ($self) = @_;
+    my ($self, $type, $version) = @_;
 
     my $result = 0;
 
-
+    if (exists(Test::Mock::API::Document::Types::TYPES_VERSIONS->{$type})) {
+        for my $supported_version (@{+Test::Mock::API::Document::Types::TYPES_VERSIONS->{$type}}) {
+            if ($version =~ /^$supported_version/) {
+                $result = 1;
+                last;
+            }
+        }
+    }
 
     return $result;
 }

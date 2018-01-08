@@ -12,6 +12,7 @@ use Test::Mock::API;
 use Test::Mock::API::Detector;
 use Test::Mock::API::Loader;
 use Test::Mock::API::Document;
+use Test::Mock::API::Document::Types;
 
 
 has url => undef;
@@ -29,7 +30,18 @@ has create => sub {
 
         confess("Document is not object") unless(blessed($document) eq 'Test::Mock::API::Document');
 
-        return $document;
+        #@type Test::Mock::API
+        my $api_package = Test::Mock::API::Document::Types::TYPES->{$document->type()};
+
+        my $path_api_package = sprintf("%s.pm", $api_package);
+        $path_api_package =~ s{::}{/}g;
+        eval { require $path_api_package; };
+
+        my $api = $api_package->new(document => $document);
+
+        $api->render();
+
+        return $api;
     };
 
 #@method

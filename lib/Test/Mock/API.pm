@@ -40,6 +40,16 @@ This method return version of schema API
 #@method
 has version => sub { confess "not implemented"; };
 
+=head2 Method Type
+
+This method return type of schema API
+
+=cut
+
+#@abstract
+#@method
+has type => sub { confess "not implemented"; };
+
 =head2 Method URL
 
 This method will return URL of a schema.

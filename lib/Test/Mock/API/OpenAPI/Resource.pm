@@ -5,16 +5,18 @@ use Mojo::Base -base;
 use strict;
 use warnings FATAL => 'all';
 
+use Test::Mock::API::OpenAPI::Resource::Method;
 
-has 'path';
-has 'methods';
+has path => undef;
 
-has add_method => sub {
-        my $self = shift();
-        my $method = shift();
+has methods => sub { {} };
 
-        push(@{$self->{methods}}, $method);
-    };
+sub add_method  {
+    my ($self, $name, $method) = @_;
+
+    #@type Test::Mock::API::OpenAPI::Resource::Method
+    $self->methods()->{$name} = $method
+};
 
 
 1;

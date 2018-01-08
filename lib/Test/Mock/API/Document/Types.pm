@@ -19,8 +19,8 @@ use constant TYPES => {
     };
 
 use constant TYPES_VERSIONS => {
-    OpenAPI => [3.0],
-    Swagger => [ 1.2, 2.0 ]
+    OpenAPI => ['3.0'],
+    Swagger => []
 };
 
 1;

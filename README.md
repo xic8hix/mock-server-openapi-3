@@ -4,7 +4,7 @@
 
 ### CLI
 
-> perl -Ilib/ bin/mock-server -u https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v2.0/yaml/petstore-separate/spec/swagger.yaml
+> perl -I lib/ bin/mock-server -u https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v2.0/yaml/petstore-separate/spec/swagger.yaml
 
 #### Version
 
@@ -50,14 +50,25 @@
 * Test::Mock::API::OpenAPI
 * Test::Mock::API::OpenAPI::Resource
 * Test::Mock::API::OpenAPI::Resource::Response
+* Test::Mock::API::OpenAPI::Resource::Schema
 * Test::Mock::API::OpenAPI::Resource::Method
+* Test::Mock::API::OpenAPI::Resource::Method::Factory
+* Test::Mock::API::OpenAPI::Resource::Method::OPTIONS
+* Test::Mock::API::OpenAPI::Resource::Method::HEAD
+* Test::Mock::API::OpenAPI::Resource::Method::GET
+* Test::Mock::API::OpenAPI::Resource::Method::POST
+* Test::Mock::API::OpenAPI::Resource::Method::PATCH
+* Test::Mock::API::OpenAPI::Resource::Method::PUT
+* Test::Mock::API::OpenAPI::Resource::Method::DELETE
+* Test::Mock::API::OpenAPI::Resource::Method::TRACE
 * Test::Mock::API::OpenAPI::Resource::Parameter
-* Test::Mock::API::OpenAPI::Resource::Parameter::
+* Test::Mock::API::OpenAPI::Resource::Parameter::Factory
 * Test::Mock::API::OpenAPI::Resource::Parameter::Boolean
 * Test::Mock::API::OpenAPI::Resource::Parameter::Integer
 * Test::Mock::API::OpenAPI::Resource::Parameter::Number
 * Test::Mock::API::OpenAPI::Resource::Parameter::String
 * Test::Mock::API::OpenAPI::Resource::Parameter::Format
+* Test::Mock::API::OpenAPI::Resource::Parameter::Format::Factory
 * Test::Mock::API::OpenAPI::Resource::Parameter::Format::Int32
 * Test::Mock::API::OpenAPI::Resource::Parameter::Format::Int64
 * Test::Mock::API::OpenAPI::Resource::Parameter::Format::Double

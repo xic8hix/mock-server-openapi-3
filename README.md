@@ -26,8 +26,8 @@
 * OpenAPI 
   * 3.0.0
   * 3.0.1
-* Swagger
-  * 2.0
+* ~~Swagger~~
+  * ~~2.0~~
 
 ## Constitutions
 

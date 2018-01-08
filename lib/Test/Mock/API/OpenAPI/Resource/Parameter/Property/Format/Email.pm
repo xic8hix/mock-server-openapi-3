@@ -1,6 +1,6 @@
-package Test::Mock::API::OpenAPI::Resource::Parameter::Format::Email;
+package Test::Mock::API::OpenAPI::Resource::Parameter::Property::Format::Email;
 
-use Mojo::Base 'Test::Mock::API::OpenAPI::Resource::Parameter::String';
+use Mojo::Base 'Test::Mock::API::OpenAPI::Resource::Parameter::Property::String';
 
 use strict;
 use warnings FATAL => 'all';

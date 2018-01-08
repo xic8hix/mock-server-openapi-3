@@ -53,7 +53,8 @@ sub render {
             # Find parameters
             for my $parameter_object (keys @{$document->{paths}->{$path}->{$method_name}->{parameters}}) {
                 my $parameter = Test::Mock::API::OpenAPI::Resource::Parameter::Factory
-                    ->new($parameter_object)->instance($parameter_object);
+                    ->new($parameter_object)
+                    ->instance();
             }
 
             # Find responses

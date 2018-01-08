@@ -1,4 +1,4 @@
-package Test::Mock::API::OpenAPI::Resource::Schema;
+package Test::Mock::API::OpenAPI::Resource::Parameter::Schema;
 
 use Mojo::Base -base;
 

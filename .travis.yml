@@ -10,7 +10,7 @@ script:
   - perl Makefile.PL
   - make
   - make test
-  - cover
+  - cover -test
 
 after_success:
   - travis_retry cover -report codecov

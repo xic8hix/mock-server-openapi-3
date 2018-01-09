@@ -6,12 +6,12 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME          => 'Test::Mock::API::OpenAPI',
-    VERSION_FROM  => 'lib/Test/Mock/OpenAPI.pm',
+    VERSION_FROM  => 'lib/Test/Mock/API/OpenAPI.pm',
     PREREQ_PM     => {
         'Mojolicious' => 7.58,
         'YAML::XS'    => 0.69,
         'URI'         => 1.07
     },
-    ABSTRACT_FROM => 'lib/Test/Mock/OpenAPI.pm',
+    ABSTRACT_FROM => 'lib/Test/Mock/API/OpenAPI.pm',
     AUTHOR        => 'Lev ICHI Zaplatin <ichi.su.mobile@gmail.com>',
 );

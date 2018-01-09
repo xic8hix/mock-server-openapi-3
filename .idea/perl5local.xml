@@ -4,6 +4,7 @@
     <option name="perlInterpreter" value="Perl v5.24.0" />
   </component>
   <component name="Perl5XSubsState">
+    <option name="isActual" value="false" />
     <option name="myFilesMap">
       <map>
         <entry key="$USER_HOME$/perl5.24.0/lib/5.24.0/x86_64-linux-thread-multi/auto/B/B.so" value="1476561498000" />

@@ -51,4 +51,9 @@ crashlytics-build.properties
 fabric.properties
 
 /_Deparsed_XSubs.pm
+
 cover_db/
+.idea/inspectionProfiles/
+/MYMETA.json
+/MYMETA.yml
+/Makefile

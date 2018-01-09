@@ -1,0 +1,16 @@
+language: perl
+perl:
+  - "5.18"
+  - "5.26"
+
+before_script:
+  - cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Codecov
+
+script:
+  - perl Makefile.PL
+  - make
+  - make test
+  - cover
+
+after_success:
+  - travis_retry cover -report codecov

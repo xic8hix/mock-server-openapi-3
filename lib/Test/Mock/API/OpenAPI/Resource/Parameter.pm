@@ -1,11 +1,11 @@
 package Test::Mock::API::OpenAPI::Resource::Parameter;
 
+use Mojo::Base -base;
 
 use strict;
 use warnings FATAL => 'all';
 
 use Carp;
-
 
 has name => undef;
 

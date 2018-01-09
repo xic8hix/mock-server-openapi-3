@@ -7,7 +7,7 @@ before_script:
   - cpanm --quiet --notest --skip-satisfied Devel::Cover::Report::Codecov
 
 script:
-  - perl Makefile.PL
+  - perl -I ./lib/ Makefile.PL
   - make
   - make test
   - cover -test

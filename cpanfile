@@ -1,3 +1,3 @@
-requires 'App::SerializeUtils';
 requires 'Mojolicious';
-requires 'JSON::Validator';
+requires 'YAML::XS';
+requires 'URI';

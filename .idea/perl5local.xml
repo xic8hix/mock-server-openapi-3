@@ -4,7 +4,6 @@
     <option name="perlInterpreter" value="Perl v5.24.0" />
   </component>
   <component name="Perl5XSubsState">
-    <option name="isActual" value="false" />
     <option name="myFilesMap">
       <map>
         <entry key="$USER_HOME$/perl5.24.0/lib/5.24.0/x86_64-linux-thread-multi/auto/B/B.so" value="1476561498000" />
@@ -65,6 +64,7 @@
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/auto/share/dist/Alien-Hunspell/dynamic/libhunspell-1.3.so" value="1480865819000" />
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/Algorithm/Diff/XS/XS.so" value="1497302693000" />
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/B/Flags/Flags.so" value="1483528624000" />
+        <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/B/Hooks/OP/Check/Check.so" value="1515456169000" />
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/Class/Load/XS/XS.so" value="1484342849000" />
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/Class/XSAccessor/XSAccessor.so" value="1497302698000" />
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/Clone/Clone.so" value="1513512347000" />
@@ -82,6 +82,7 @@
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/Data/Undump/Undump.so" value="1512852645000" />
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/DateTime/DateTime.so" value="1484343521000" />
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/Devel/Caller/Caller.so" value="1484342873000" />
+        <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/Devel/Cover/Cover.so" value="1515455756000" />
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/Devel/LexAlias/LexAlias.so" value="1484342874000" />
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/Devel/PPPort/PPPort.so" value="1476562941000" />
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/Digest/MD5/MD5.so" value="1476562947000" />
@@ -138,7 +139,7 @@
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/Variable/Magic/Magic.so" value="1484342904000" />
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/XML/Parser/Expat/Expat.so" value="1480867345000" />
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/YAML/Syck/Syck.so" value="1512852837000" />
-        <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/YAML/XS/LibYAML/LibYAML.so" value="1512852846000" />
+        <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/YAML/XS/LibYAML/LibYAML.so" value="1515459248000" />
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/ZMQ/LibZMQ3/LibZMQ3.so" value="1480867670000" />
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/threads/shared/shared.so" value="1484342430000" />
         <entry key="$USER_HOME$/perl5.24.0/lib/perl5/x86_64-linux-thread-multi/auto/threads/threads.so" value="1484342393000" />

@@ -3,6 +3,10 @@
 [![Build Status](https://travis-ci.org/xic8hix/mock-server-openapi-3.svg?branch=master)](https://travis-ci.org/xic8hix/mock-server-openapi-3)
 [![codecov](https://codecov.io/gh/xic8hix/mock-server-openapi-3/branch/master/graph/badge.svg)](https://codecov.io/gh/xic8hix/mock-server-openapi-3)
 
+## Notice
+
+![Warning](https://github.com/iconic/open-iconic/raw/master/png/warning-4x.png "Warning") **This version is unstable, please not using now** ![Warning](https://github.com/iconic/open-iconic/raw/master/png/warning-4x.png "Warning")
+
 ## Using
 
 ### CLI
@@ -11,7 +15,7 @@
 
 #### Version
 
-* alpha - development/testing
+* **pre-alpha** - development/testing
 
 #### Options
 

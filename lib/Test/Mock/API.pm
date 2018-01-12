@@ -2,10 +2,14 @@ package Test::Mock::API;
 
 use Mojo::Base -base;
 
+use 5.016;
 use strict;
 use warnings FATAL => 'all';
 
 use Carp;
+
+our $VERSION = '0.01';
+
 
 =head1 Interface Test::Mock::API
 

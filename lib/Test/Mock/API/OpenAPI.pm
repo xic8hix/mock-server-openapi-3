@@ -2,7 +2,6 @@ package Test::Mock::API::OpenAPI;
 
 use Mojo::Base 'Test::Mock::API';
 
-use 5.010001;
 use strict;
 use warnings;
 
@@ -11,8 +10,6 @@ use Test::Mock::API::OpenAPI::Resource;
 use Test::Mock::API::OpenAPI::Resource::Method;
 use Test::Mock::API::OpenAPI::Resource::Parameter;
 use Test::Mock::API::OpenAPI::Resource::Response;
-
-our $VERSION = '0.01';
 
 
 #@override
@@ -52,9 +49,7 @@ sub render {
 
             # Find parameters
             for my $parameter_object (keys @{$document->{paths}->{$path}->{$method_name}->{parameters}}) {
-                my $parameter = Test::Mock::API::OpenAPI::Resource::Parameter::Factory
-                    ->new($parameter_object)
-                    ->instance();
+                my $parameter = Test::Mock::API::OpenAPI::Resource::Parameter->new($parameter_object);
             }
 
             # Find responses

@@ -9,7 +9,6 @@ use Carp;
 use Scalar::Util qw/blessed/;
 
 use Test::Mock::API;
-use Test::Mock::API::Detector;
 use Test::Mock::API::Loader;
 use Test::Mock::API::Document;
 use Test::Mock::API::Document::Types;

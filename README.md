@@ -1,7 +1,7 @@
 # Test::Mock::Server
 
-[![Build Status](https://travis-ci.org/xic8hix/mock-server-openapi-3.svg?branch=master)](https://travis-ci.org/xic8hix/mock-server-openapi-3)
-[![codecov](https://codecov.io/gh/xic8hix/mock-server-openapi-3/branch/master/graph/badge.svg)](https://codecov.io/gh/xic8hix/mock-server-openapi-3)
+[![Build Status](https://travis-ci.org/xic8hix/mock-server-rest-api.svg?branch=master)](https://travis-ci.org/xic8hix/mock-server-openapi-3)
+[![codecov](https://codecov.io/gh/xic8hix/mock-server-rest-api/branch/master/graph/badge.svg)](https://codecov.io/gh/xic8hix/mock-server-openapi-3)
 
 ## Notice
 

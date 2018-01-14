@@ -52,6 +52,7 @@ has default => undef;
 has pattern => undef;
 
 has validate => sub {confess "not implemented";};
+has generate => sub {confess "not implemented";};
 
 # Integer && Float
 # Test::Mock::API::OpenAPI::Resource::Parameter::Property::Integer

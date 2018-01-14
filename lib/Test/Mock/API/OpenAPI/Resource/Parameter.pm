@@ -21,4 +21,22 @@ has allowEmptyValue => undef;
 
 has schema => undef;
 
+sub prepare {
+    my ($class, $args) = @_;
+
+    #@returns __PACKAGE__
+    my $self = $class->new($args);
+
+    $self->prepare_schema();
+
+    return $self;
+};
+
+sub prepare_schema {
+    my ($self) = @_;
+
+
+};
+
+
 1;

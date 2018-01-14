@@ -5,12 +5,8 @@ use Mojo::Base -base;
 use strict;
 use warnings FATAL => 'all';
 
-has property => sub { [] };
+use Carp;
 
-sub add_parameter {
-    my ($self, $parameter) = @_;
-
-    push(@{$self->property()}, $parameter);
-};
+has properties => sub {confess "not implemented";};
 
 1;

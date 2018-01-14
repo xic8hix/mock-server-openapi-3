@@ -49,7 +49,7 @@ sub render {
 
             # Find parameters
             for my $parameter_object (keys @{$document->{paths}->{$path}->{$method_name}->{parameters}}) {
-                my $parameter = Test::Mock::API::OpenAPI::Resource::Parameter->new($parameter_object);
+                my $parameter = Test::Mock::API::OpenAPI::Resource::Parameter->prepare($parameter_object);
             }
 
             # Find responses

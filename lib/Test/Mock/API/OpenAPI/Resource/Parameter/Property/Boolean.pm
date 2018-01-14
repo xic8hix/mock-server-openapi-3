@@ -8,11 +8,7 @@ use warnings FATAL => 'all';
 use JSON::PP;
 
 has generate => sub {
-        my ($self) = @_;
-
-        my $rand = rand(1);
-
-        return $rand ? JSON::PP::true : JSON::PP::false;
+        return rand(1) ? JSON::PP::true : JSON::PP::false;
     };
 
 1;

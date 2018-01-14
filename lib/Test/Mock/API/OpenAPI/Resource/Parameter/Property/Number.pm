@@ -44,12 +44,12 @@ has generate => sub {
         }
         elsif ($random_integer == $min_integer) {
             my $min_max_fractional = 10 ** $len_min_fractional;
-            $random_fractional = sprintf($max_fractional_template, rand($min_max_fractional));
-            $random_fractional = int($min_fractional) if ($random_fractional < int($min_fractional));
+            $random_fractional = sprintf($min_fractional_template, rand($min_max_fractional));
+            $random_fractional = int($min_fractional) if (int($random_fractional) < int($min_fractional));
         }
         else {
             my $max_random_fractional = 10 ** 6;
-            $random_fractional = sprintf($max_fractional_template, rand($max_random_fractional));
+            $random_fractional = sprintf($random_fractional_template, rand($max_random_fractional));
         }
 
         my $random = sprintf("%s.%s", $random_integer, $random_fractional);

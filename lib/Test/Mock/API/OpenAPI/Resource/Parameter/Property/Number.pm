@@ -5,9 +5,8 @@ use Mojo::Base 'Test::Mock::API::OpenAPI::Resource::Parameter::Property';
 use strict;
 use warnings FATAL => 'all';
 
-
-has minimum => -1.7976931348623157e+308;
-has maximum =>  1.7976931348623157e+308;
+has minimum => - 1.7976931348623157e+308;
+has maximum => 1.7976931348623157e+308;
 
 has validate => sub {
         my ($self) = @_;

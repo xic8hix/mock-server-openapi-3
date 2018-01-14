@@ -9,6 +9,8 @@ use Carp;
 use File::Fetch;
 use YAML::XS;
 
+local $YAML::XS::Boolean = "JSON::PP";
+
 use Test::Mock::API::Document;
 use Test::Mock::API::Document::Types;
 
@@ -16,7 +18,7 @@ $File::Fetch::BLACKLIST = [ 'lwp' ];
 
 has url => undef;
 
-has external_documents => sub { {} };
+has external_documents => sub {{}};
 
 has type_parent_document => undef;
 
@@ -24,7 +26,7 @@ has version_parent_document => undef;
 
 has is_child => undef;
 
-has loader_map => sub { {} };
+has loader_map => sub {{}};
 
 #@method
 sub download {
@@ -51,10 +53,10 @@ sub load {
 
     if ($self->is_child()) {
         $document = Test::Mock::API::Document->new(
-            url => $self->url(),
-            content => $object,
-            is_child => $self->is_child(),
-            type_document => $self->type_parent_document(),
+            url              => $self->url(),
+            content          => $object,
+            is_child         => $self->is_child(),
+            type_document    => $self->type_parent_document(),
             version_document => $self->version_parent_document()
         );
     }
@@ -101,7 +103,7 @@ sub load {
 sub loader {
     my ($self, $uri) = @_;
 
-    $uri = $self->url() unless($uri);
+    $uri = $self->url() unless ($uri);
 
     my $loader_map = $self->loader_map();
 
@@ -118,7 +120,7 @@ sub check_version {
     my $result = 0;
 
     if (exists(Test::Mock::API::Document::Types::TYPES_VERSIONS->{$type})) {
-        for my $supported_version (@{+Test::Mock::API::Document::Types::TYPES_VERSIONS->{$type}}) {
+        for my $supported_version (@{+ Test::Mock::API::Document::Types::TYPES_VERSIONS->{$type}}) {
             if ($version =~ /^$supported_version/) {
                 $result = 1;
                 last;

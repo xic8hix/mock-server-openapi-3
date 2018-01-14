@@ -15,6 +15,7 @@ WriteMakefile(
         'Email::Valid'              => 1.202,
         'DateTime'                  => 1.45,
         'DateTime::Format::RFC3339' => 1.2,
+        'JSON::PP'                  => 2.97001,
     },
     ABSTRACT_FROM => 'lib/Test/Mock/API.pm',
     AUTHOR        => 'Lev ICHI Zaplatin <ichi.su.mobile@gmail.com>',

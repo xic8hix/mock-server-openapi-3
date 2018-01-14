@@ -56,6 +56,7 @@
 
 * Test::Mock::API::OpenAPI
 * Test::Mock::API::OpenAPI::Resource
+* Test::Mock::API::OpenAPI::Resource::Parameter
 * Test::Mock::API::OpenAPI::Resource::Response
 * Test::Mock::API::OpenAPI::Resource::Method
 * Test::Mock::API::OpenAPI::Resource::Method::Factory
@@ -67,9 +68,11 @@
 * Test::Mock::API::OpenAPI::Resource::Method::PUT
 * Test::Mock::API::OpenAPI::Resource::Method::DELETE
 * Test::Mock::API::OpenAPI::Resource::Method::TRACE
-* Test::Mock::API::OpenAPI::Resource::Parameter
-* Test::Mock::API::OpenAPI::Resource::Parameter::Schema
-* Test::Mock::API::OpenAPI::Resource::Parameter::Factory
+* Test::Mock::API::OpenAPI::Resource::Schema
+* Test::Mock::API::OpenAPI::Resource::Schema::Object
+* Test::Mock::API::OpenAPI::Resource::Schema::Array
+* Test::Mock::API::OpenAPI::Resource::Schema::Value
+* Test::Mock::API::OpenAPI::Resource::Property
 * Test::Mock::API::OpenAPI::Resource::Property::Boolean
 * Test::Mock::API::OpenAPI::Resource::Property::Integer
 * Test::Mock::API::OpenAPI::Resource::Property::Number
@@ -93,6 +96,11 @@
 * [Mojolicious](https://metacpan.org/pod/Mojolicious)
 * [YAML::XS](https://metacpan.org/pod/distribution/YAML-LibYAML/lib/YAML/XS.pod)
 * [URI](https://metacpan.org/pod/URI)
+* [String::Random](https://metacpan.org/pod/String::Random)
+* [Email::Valid](https://metacpan.org/pod/Email::Valid)
+* [DateTime](https://metacpan.org/pod/DateTime)
+* [DateTime::Format::RFC3339](https://metacpan.org/pod/DateTime::Format::RFC3339)
+* [JSON::PP](https://metacpan.org/pod/JSON::PP)
 
 ## License
 

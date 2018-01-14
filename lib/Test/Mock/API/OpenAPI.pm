@@ -26,8 +26,9 @@ has type => sub {
         return $self->document()->type();
     };
 
+has resources => sub {{}};
 
-has resources => sub { {} };
+has schemas => sub {{}};
 
 #@returns Test::Mock::API::Document
 has document => undef;
@@ -44,7 +45,8 @@ sub render {
 
         for my $method_name (keys %{$document->{paths}->{$path}}) {
 
-            my $method = Test::Mock::API::OpenAPI::Resource::Method::Factory->new(method => uc($method_name))->instance();
+            my $method = Test::Mock::API::OpenAPI::Resource::Method::Factory->instance(method =>
+                uc($method_name));
             $resource->add_method($method_name, $method);
 
             # Find parameters

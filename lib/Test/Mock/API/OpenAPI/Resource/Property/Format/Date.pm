@@ -1,6 +1,6 @@
-package Test::Mock::API::OpenAPI::Resource::Parameter::Property::Format::Date;
+package Test::Mock::API::OpenAPI::Resource::Property::Format::Date;
 
-use Mojo::Base 'Test::Mock::API::OpenAPI::Resource::Parameter::Property::String';
+use Mojo::Base 'Test::Mock::API::OpenAPI::Resource::Property::String';
 
 use strict;
 use warnings FATAL => 'all';

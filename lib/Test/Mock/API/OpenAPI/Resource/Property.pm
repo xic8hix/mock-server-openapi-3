@@ -1,4 +1,4 @@
-package Test::Mock::API::OpenAPI::Resource::Parameter::Property;
+package Test::Mock::API::OpenAPI::Resource::Property;
 
 use Mojo::Base -base;
 
@@ -55,24 +55,24 @@ has validate => sub {confess "not implemented";};
 has generate => sub {confess "not implemented";};
 
 # Integer && Float
-# Test::Mock::API::OpenAPI::Resource::Parameter::Property::Integer
-# Test::Mock::API::OpenAPI::Resource::Parameter::Property::Format::Int32
-# Test::Mock::API::OpenAPI::Resource::Parameter::Property::Format::Int64
-# Test::Mock::API::OpenAPI::Resource::Parameter::Property::Number
-# Test::Mock::API::OpenAPI::Resource::Parameter::Property::Format::Float
-# Test::Mock::API::OpenAPI::Resource::Parameter::Property::Format::Double
+# Test::Mock::API::OpenAPI::Resource::Property::Integer
+# Test::Mock::API::OpenAPI::Resource::Property::Format::Int32
+# Test::Mock::API::OpenAPI::Resource::Property::Format::Int64
+# Test::Mock::API::OpenAPI::Resource::Property::Number
+# Test::Mock::API::OpenAPI::Resource::Property::Format::Float
+# Test::Mock::API::OpenAPI::Resource::Property::Format::Double
 has minimum => undef;
 has maximum => undef;
 
 # Length. String
-# Test::Mock::API::OpenAPI::Resource::Parameter::Property::String
-# Test::Mock::API::OpenAPI::Resource::Parameter::Property::Format::Binary
-# Test::Mock::API::OpenAPI::Resource::Parameter::Property::Format::Byte
-# Test::Mock::API::OpenAPI::Resource::Parameter::Property::Format::Date
-# Test::Mock::API::OpenAPI::Resource::Parameter::Property::Format::DateTime
-# Test::Mock::API::OpenAPI::Resource::Parameter::Property::Format::Email
-# Test::Mock::API::OpenAPI::Resource::Parameter::Property::Format::Password
-# Test::Mock::API::OpenAPI::Resource::Parameter::Property::Format::UUID
+# Test::Mock::API::OpenAPI::Resource::Property::String
+# Test::Mock::API::OpenAPI::Resource::Property::Format::Binary
+# Test::Mock::API::OpenAPI::Resource::Property::Format::Byte
+# Test::Mock::API::OpenAPI::Resource::Property::Format::Date
+# Test::Mock::API::OpenAPI::Resource::Property::Format::DateTime
+# Test::Mock::API::OpenAPI::Resource::Property::Format::Email
+# Test::Mock::API::OpenAPI::Resource::Property::Format::Password
+# Test::Mock::API::OpenAPI::Resource::Property::Format::UUID
 has minLength => undef;
 has maxLength => undef;
 

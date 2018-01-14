@@ -1,6 +1,6 @@
-package Test::Mock::API::OpenAPI::Resource::Parameter::Property::Number;
+package Test::Mock::API::OpenAPI::Resource::Property::Number;
 
-use Mojo::Base 'Test::Mock::API::OpenAPI::Resource::Parameter::Property';
+use Mojo::Base 'Test::Mock::API::OpenAPI::Resource::Property';
 
 use strict;
 use warnings FATAL => 'all';

@@ -5,6 +5,8 @@ use Mojo::Base -base;
 use strict;
 use warnings FATAL => 'all';
 
+use Scalar::Util;
+
 use Test::Mock::API::OpenAPI::Resource::Method::OPTIONS;
 use Test::Mock::API::OpenAPI::Resource::Method::HEAD;
 use Test::Mock::API::OpenAPI::Resource::Method::GET;
@@ -20,6 +22,8 @@ has method => undef;
 #@returns Test::Mock::API::OpenAPI::Resource::Method
 sub instance {
     my ($self) = @_;
+
+    $self = $self->new(@_) unless (Scalar::Util::blessed($self));
 
     my $instance;
     my $method = $self->method();
